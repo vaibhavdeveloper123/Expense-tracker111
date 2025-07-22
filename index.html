@@ -1575,5 +1575,232 @@
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
     </script>
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Expense Tracker & Tools</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Inherit original styles */
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f0f2f5; color: #333; }
+    .container { max-width: 1200px; margin: auto; padding: 20px; }
+    .tab-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+    .tab-nav button { background: #2D3B8E; color: white; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; }
+    .tab { display: none; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .tab.active { display: block; }
+    h2 { margin-bottom: 15px; }
+    label { display: block; margin: 10px 0 5px; }
+    input, select, textarea { padding: 10px; width: 100%; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; }
+    button.tool-btn { background: #2CB9B0; color: white; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; }
+    .result-box { background: #f5f7fa; padding: 10px; border-radius: 6px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>💼 Smart Expense Tracker + Tools</h1>
+  <div class="tab-nav">
+    <button onclick="showTab('image-compressor')">🖼️ Image Compressor</button>
+    <button onclick="showTab('bmi')">⚖️ BMI Calculator</button>
+    <button onclick="showTab('age')">🎂 Age Calculator</button>
+    <button onclick="showTab('discount')">💸 Discount Calc</button>
+    <button onclick="showTab('gst')">📊 GST Calculator</button>
+    <button onclick="showTab('sip')">📈 SIP Calculator</button>
+    <button onclick="showTab('qrcode')">📷 QR Generator</button>
+    <button onclick="showTab('tts')">🔊 Text to Speech</button>
+    <button onclick="showTab('unit')">🔁 Unit Converter</button>
+    <button onclick="showTab('base64')">🧬 Base64 Image</button>
+  </div>
+
+  <!-- IMAGE COMPRESSOR -->
+  <div id="image-compressor" class="tab active">
+    <h2>🖼️ Image Compressor</h2>
+    <input type="file" id="imgInput">
+    <label>Quality (0.1 - 1):</label>
+    <input type="number" id="imgQuality" value="0.7" step="0.1" min="0.1" max="1">
+    <button class="tool-btn" onclick="compressImage()">Compress & Download</button>
+    <canvas id="canvas" style="display:none;"></canvas>
+  </div>
+
+  <!-- BMI CALCULATOR -->
+  <div id="bmi" class="tab">
+    <h2>⚖️ BMI Calculator</h2>
+    <label>Height (cm):</label><input type="number" id="height">
+    <label>Weight (kg):</label><input type="number" id="weight">
+    <button class="tool-btn" onclick="calcBMI()">Calculate BMI</button>
+    <div class="result-box" id="bmi-result"></div>
+  </div>
+
+  <!-- AGE CALCULATOR -->
+  <div id="age" class="tab">
+    <h2>🎂 Age Calculator</h2>
+    <label>Date of Birth:</label><input type="date" id="dob">
+    <button class="tool-btn" onclick="calcAge()">Calculate Age</button>
+    <div class="result-box" id="age-result"></div>
+  </div>
+
+  <!-- DISCOUNT CALCULATOR -->
+  <div id="discount" class="tab">
+    <h2>💸 Discount Calculator</h2>
+    <label>Original Price:</label><input type="number" id="orig-price">
+    <label>Discount (%):</label><input type="number" id="discount-percent">
+    <button class="tool-btn" onclick="calcDiscount()">Calculate</button>
+    <div class="result-box" id="discount-result"></div>
+  </div>
+
+  <!-- GST CALCULATOR -->
+  <div id="gst" class="tab">
+    <h2>📊 GST Calculator</h2>
+    <label>Price:</label><input type="number" id="gst-price">
+    <label>GST Rate (%):</label><input type="number" id="gst-rate">
+    <button class="tool-btn" onclick="calcGST()">Calculate</button>
+    <div class="result-box" id="gst-result"></div>
+  </div>
+
+  <!-- SIP CALCULATOR -->
+  <div id="sip" class="tab">
+    <h2>📈 SIP Calculator</h2>
+    <label>Monthly Investment:</label><input type="number" id="sip-amount">
+    <label>Years:</label><input type="number" id="sip-years">
+    <label>Expected Return Rate (%):</label><input type="number" id="sip-rate">
+    <button class="tool-btn" onclick="calcSIP()">Calculate</button>
+    <div class="result-box" id="sip-result"></div>
+  </div>
+
+  <!-- QR CODE GENERATOR -->
+  <div id="qrcode" class="tab">
+    <h2>📷 QR Code Generator</h2>
+    <label>Text/URL:</label><input type="text" id="qrtext">
+    <button class="tool-btn" onclick="makeQR()">Generate</button>
+    <div id="qrresult" style="margin-top:15px;"></div>
+  </div>
+
+  <!-- TEXT TO SPEECH -->
+  <div id="tts" class="tab">
+    <h2>🔊 Text to Speech</h2>
+    <label>Enter Text:</label><textarea id="speechText"></textarea>
+    <button class="tool-btn" onclick="speakText()">Speak</button>
+  </div>
+
+  <!-- UNIT CONVERTER (km to miles) -->
+  <div id="unit" class="tab">
+    <h2>🔁 Unit Converter (KM ➡️ Miles)</h2>
+    <label>Kilometers:</label><input type="number" id="km">
+    <button class="tool-btn" onclick="convertKM()">Convert</button>
+    <div class="result-box" id="unit-result"></div>
+  </div>
+
+  <!-- BASE64 ENCODER -->
+  <div id="base64" class="tab">
+    <h2>🧬 Base64 Image Encoder</h2>
+    <input type="file" id="base64file">
+    <button class="tool-btn" onclick="convertToBase64()">Convert</button>
+    <textarea id="base64output" rows="5"></textarea>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+  function compressImage() {
+    const file = document.getElementById('imgInput').files[0];
+    const quality = parseFloat(document.getElementById('imgQuality').value);
+    if (!file || isNaN(quality)) return alert('Please select file and valid quality');
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      const img = new Image();
+      img.onload = function () {
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        canvas.toBlob(blob => {
+          const link = document.createElement('a');
+          link.download = 'compressed.jpg';
+          link.href = URL.createObjectURL(blob);
+          link.click();
+        }, 'image/jpeg', quality);
+      }
+      img.src = event.target.result;
+    }
+    reader.readAsDataURL(file);
+  }
+
+  function calcBMI() {
+    let h = parseFloat(document.getElementById('height').value)/100;
+    let w = parseFloat(document.getElementById('weight').value);
+    if (!h || !w) return;
+    let bmi = (w/(h*h)).toFixed(2);
+    document.getElementById('bmi-result').innerText = `BMI: ${bmi}`;
+  }
+
+  function calcAge() {
+    let dob = new Date(document.getElementById('dob').value);
+    let today = new Date();
+    let age = today.getFullYear() - dob.getFullYear();
+    document.getElementById('age-result').innerText = `Your Age: ${age} years`;
+  }
+
+  function calcDiscount() {
+    let p = parseFloat(document.getElementById('orig-price').value);
+    let d = parseFloat(document.getElementById('discount-percent').value);
+    let final = p - (p*d/100);
+    document.getElementById('discount-result').innerText = `Final Price: ₹${final.toFixed(2)}`;
+  }
+
+  function calcGST() {
+    let price = parseFloat(document.getElementById('gst-price').value);
+    let rate = parseFloat(document.getElementById('gst-rate').value);
+    let tax = price * (rate / 100);
+    let total = price + tax;
+    document.getElementById('gst-result').innerText = `GST: ₹${tax.toFixed(2)} | Total: ₹${total.toFixed(2)}`;
+  }
+
+  function calcSIP() {
+    let amt = parseFloat(document.getElementById('sip-amount').value);
+    let yrs = parseFloat(document.getElementById('sip-years').value);
+    let rate = parseFloat(document.getElementById('sip-rate').value)/100/12;
+    let months = yrs * 12;
+    let fv = amt * ((Math.pow(1 + rate, months) - 1) / rate) * (1 + rate);
+    document.getElementById('sip-result').innerText = `Future Value: ₹${fv.toFixed(2)}`;
+  }
+
+  function makeQR() {
+    let text = document.getElementById('qrtext').value;
+    QRCode.toCanvas(document.createElement('canvas'), text, function (err, canvas) {
+      if (err) return alert('Error generating QR');
+      let qrDiv = document.getElementById('qrresult');
+      qrDiv.innerHTML = '';
+      qrDiv.appendChild(canvas);
+    });
+  }
+
+  function speakText() {
+    let msg = new SpeechSynthesisUtterance(document.getElementById('speechText').value);
+    window.speechSynthesis.speak(msg);
+  }
+
+  function convertKM() {
+    let km = parseFloat(document.getElementById('km').value);
+    let miles = km * 0.621371;
+    document.getElementById('unit-result').innerText = `${km} KM = ${miles.toFixed(2)} Miles`;
+  }
+
+  function convertToBase64() {
+    const file = document.getElementById('base64file').files[0];
+    const reader = new FileReader();
+    reader.onload = () => document.getElementById('base64output').value = reader.result;
+    reader.readAsDataURL(file);
+  }
+</script>
+</body>
+</html>
+
 </body>
 </html>
