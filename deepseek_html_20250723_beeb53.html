@@ -1,0 +1,2340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4218914690424089" crossorigin="anonymous"></script>	
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Expense Tracker | Budget Calculator, EMI, Grocery & Finance Tools</title>
+
+  <!-- ✅ SEO Meta Tags -->
+  <meta name="description" content="Track expenses, plan budget, calculate EMI, BMI, SIP, GST, discount, age, interest, and compress images with the all-in-one smart finance & tools app. Perfect for money management, students, and families. 100% free, easy-to-use calculators and converters.">
+  <meta name="keywords" content="expense tracker, EMI calculator, budget planner, SIP calculator, GST calculator, age calculator, BMI calculator, loan calculator, interest calculator, discount calculator, online tools, image compressor, base64 encoder, QR code generator, text to speech online, percentage calculator, financial calculator, monthly budget planner, track spending, best budget app, free expense manager, save money app, daily spending tracker, utility bill calculator, personal finance tool, budget for students, income tracker, grocery calculator, household expense manager, best finance app India, digital budget journal, fast budget calculator, smart finance dashboard, financial tools app, budget sheet maker, daily budget app, monthly savings calculator, finance tools online, track money app, finance planner for home, manage budget and expenses, investment calculator, simple budget tool, convert km to miles, image compression tool, convert image to base64, generate QR code online, free online finance tools, best free budgeting app, online expense book, financial analysis app">
+  <meta name="author" content="ExpenseWise Team">
+  <meta name="robots" content="index, follow">
+
+  <!-- ✅ Open Graph for Social Sharing -->
+  <meta property="og:title" content="Smart Expense Tracker | Budget & EMI Calculator" />
+  <meta property="og:description" content="Track your expenses, manage budgets, and calculate loans and interest with our all-in-one free expense tracker app." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsite.com" />
+  <meta property="og:image" content="https://yourwebsite.com/assets/preview.png" />
+
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Smart Expense Tracker & Calculator" />
+  <meta name="twitter:description" content="Free tool to track income, expenses, and calculate budgets with interactive UI and analytics." />
+  <meta name="twitter:image" content="https://yourwebsite.com/assets/preview.png" />
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- ✅ Font & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LSJ4HEZLM2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LSJ4HEZLM2');
+  </script>
+
+  <style>
+    :root {
+      --primary: #2D3B8E;
+      --secondary: #2CB9B0;
+      --income: #4CAF50;
+      --expense: #F44336;
+      --light: #F5F7FA;
+      --dark: #333;
+      --gray: #888;
+      --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .currency-selector {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      background-color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .balance-card {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .balance-title {
+      font-size: 16px;
+      margin-bottom: 5px;
+      opacity: 0.9;
+    }
+
+    .balance-amount {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .balance-stats {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .income-stat, .expense-stat {
+      text-align: center;
+    }
+
+    .income-stat i {
+      color: var(--income);
+    }
+
+    .expense-stat i {
+      color: var(--expense);
+    }
+
+    .stat-amount {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .stat-title {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .quick-actions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .action-btn {
+      background-color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.2s;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .action-btn i {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    .action-btn span {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .see-all {
+      font-size: 14px;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .transactions-list {
+      background-color: white;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 20px;
+    }
+
+    .transaction-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .transaction-item:last-child {
+      border-bottom: none;
+    }
+
+    .transaction-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .transaction-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #E3F2FD;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      color: var(--primary);
+    }
+
+    .transaction-info h4 {
+      font-size: 16px;
+      margin-bottom: 3px;
+    }
+
+    .transaction-info p {
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    .transaction-amount {
+      font-weight: 600;
+    }
+
+    .transaction-actions {
+      display: flex;
+      gap: 8px;
+      margin-left: 10px;
+    }
+
+    .delete-btn {
+      background: none;
+      border: none;
+      color: var(--expense);
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .income {
+      color: var(--income);
+    }
+
+    .expense {
+      color: var(--expense);
+    }
+
+    .budget-card {
+      background-color: white;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 20px;
+    }
+
+    .budget-item {
+      margin-bottom: 15px;
+    }
+
+    .budget-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .budget-category {
+      display: flex;
+      align-items: center;
+    }
+
+    .budget-category i {
+      margin-right: 10px;
+      color: var(--primary);
+    }
+
+    .budget-amount {
+      font-weight: 600;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background-color: #eee;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 4px;
+      background-color: var(--secondary);
+    }
+
+    .progress-danger {
+      background-color: var(--expense);
+    }
+
+    .progress-warning {
+      background-color: #FFC107;
+    }
+
+    .budget-footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 3px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      animation: modalFadeIn 0.3s;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .modal-title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .close-modal {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--gray);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .type-toggle {
+      display: flex;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+
+    .type-toggle button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .type-toggle button.active {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #1E2B7B;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .tab.active {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .chart-container {
+      height: 200px;
+      margin-bottom: 20px;
+    }
+
+    .confirmation-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1001;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .confirmation-content {
+      background-color: white;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .confirmation-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .confirmation-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .confirm-btn {
+      background-color: var(--expense);
+      color: white;
+    }
+
+    .cancel-btn {
+      background-color: #eee;
+      color: var(--dark);
+    }
+
+    .grocery-list {
+      background-color: white;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 20px;
+    }
+
+    .grocery-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .grocery-item:last-child {
+      border-bottom: none;
+    }
+
+    .grocery-item input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .grocery-item .item-name {
+      flex-grow: 1;
+    }
+
+    .grocery-item .item-quantity {
+      margin-right: 15px;
+      color: var(--gray);
+    }
+
+    .calculator-container {
+      background-color: white;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 20px;
+    }
+
+    .calculator-tabs {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 15px;
+    }
+
+    .calculator-tab {
+      padding: 8px 15px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .calculator-tab.active {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .calculator-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary);
+    }
+
+    .calculator-content {
+      display: none;
+    }
+
+    .calculator-content.active {
+      display: block;
+    }
+
+    .calculator-result {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f5f7fa;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    /* New Tools Section Styles */
+    .tools-container {
+      background-color: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 20px;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .tool-card {
+      background-color: var(--light);
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 1px solid #eee;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .tool-card i {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .tool-card h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .tool-card p {
+      font-size: 12px;
+      color: var(--gray);
+    }
+
+    .tool-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tool-modal-content {
+      background-color: white;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+      padding: 25px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .tool-result {
+      background-color: #f5f7fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .quick-actions {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .balance-stats {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .stat-amount {
+        font-size: 16px;
+      }
+      .header-controls {
+        gap: 10px;
+      }
+      .currency-selector {
+        padding: 6px 8px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">💰 ExpenseTracker</div>
+    <div class="header-controls">
+      <select class="currency-selector" id="currency-selector">
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="GBP">GBP (£)</option>
+        <option value="JPY">JPY (¥)</option>
+        <option value="CAD">CAD ($)</option>
+        <option value="AUD">AUD ($)</option>
+        <option value="INR">INR (₹)</option>
+        <option value="CNY">CNY (¥)</option>
+      </select>
+      <div class="user-avatar">👤</div>
+    </div>
+  </header>
+
+  <div class="balance-card">
+    <div class="balance-title">Total Balance</div>
+    <div class="balance-amount" id="total-balance">$0.00</div>
+    <div class="balance-stats">
+      <div class="income-stat">
+        <i class="fas fa-arrow-up"></i>
+        <div class="stat-amount" id="total-income">$0.00</div>
+        <div class="stat-title">Income 💰</div>
+      </div>
+      <div class="expense-stat">
+        <i class="fas fa-arrow-down"></i>
+        <div class="stat-amount" id="total-expense">$0.00</div>
+        <div class="stat-title">Expenses 💸</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quick-actions">
+    <div class="action-btn" id="add-expense">
+      <i class="fas fa-minus-circle"></i>
+      <span>Add Expense ➖</span>
+    </div>
+    <div class="action-btn" id="add-income">
+      <i class="fas fa-plus-circle"></i>
+      <span>Add Income ➕</span>
+    </div>
+    <div class="action-btn" id="set-budget">
+      <i class="fas fa-wallet"></i>
+      <span>Set Budget 💰</span>
+    </div>
+    <div class="action-btn" id="view-calculators">
+      <i class="fas fa-calculator"></i>
+      <span>Calculators 🧮</span>
+    </div>
+    <div class="action-btn" id="view-grocery">
+      <i class="fas fa-shopping-basket"></i>
+      <span>Grocery List 🛒</span>
+    </div>
+    <div class="action-btn" id="view-tools">
+      <i class="fas fa-tools"></i>
+      <span>More Tools 🛠️</span>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="transactions">💳 Transactions</div>
+    <div class="tab" data-tab="budgets">📊 Budgets</div>
+    <div class="tab" data-tab="analytics">📈 Analytics</div>
+    <div class="tab" data-tab="calculators" style="display: none;">🧮 Calculators</div>
+    <div class="tab" data-tab="grocery" style="display: none;">🛒 Grocery List</div>
+    <div class="tab" data-tab="tools" style="display: none;">🛠️ Utility Tools</div>
+  </div>
+
+  <div class="tab-content active" id="transactions">
+    <div class="section-title">
+      Recent Transactions
+      <span class="see-all">See All 👉</span>
+    </div>
+    <div class="transactions-list" id="transactions-container">
+      <div class="no-transactions">📭 No transactions yet. Add your first transaction!</div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="budgets">
+    <div class="section-title">
+      Monthly Budgets
+      <span class="see-all">See All 👉</span>
+    </div>
+    <div class="budget-card" id="budgets-container">
+      <div class="no-budgets">📭 No budgets set up yet. Create your first budget!</div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="analytics">
+    <div class="section-title">
+      Spending Analytics
+    </div>
+    <div class="chart-container">
+      <canvas id="spendingChart"></canvas>
+    </div>
+    <div class="section-title">
+      Category Breakdown
+    </div>
+    <div class="chart-container">
+      <canvas id="categoryChart"></canvas>
+    </div>
+  </div>
+
+  <div class="tab-content" id="calculators">
+    <div class="section-title">
+      Financial Calculators 🧮
+    </div>
+    <div class="calculator-container">
+      <div class="calculator-tabs">
+        <div class="calculator-tab active" data-calculator="emi">🏦 EMI</div>
+        <div class="calculator-tab" data-calculator="percentage">% Percentage</div>
+        <div class="calculator-tab" data-calculator="interest">💵 Interest</div>
+      </div>
+      <div class="calculator-content active" id="emi-calculator">
+        <div class="form-group">
+          <label for="loan-amount">💰 Loan Amount</label>
+          <input class="form-control" id="loan-amount" placeholder="e.g. 100000" type="number"/>
+        </div>
+        <div class="form-group">
+          <label for="interest-rate">📈 Interest Rate (% p.a.)</label>
+          <input class="form-control" id="interest-rate" placeholder="e.g. 8.5" type="number"/>
+        </div>
+        <div class="form-group">
+          <label for="loan-tenure">⏳ Loan Tenure (months)</label>
+          <input class="form-control" id="loan-tenure" placeholder="e.g. 60" type="number"/>
+        </div>
+        <button class="btn btn-primary" id="calculate-emi">🧮 Calculate EMI</button>
+        <div class="calculator-result" id="emi-result"></div>
+      </div>
+      <div class="calculator-content" id="percentage-calculator">
+        <div class="form-group">
+          <label for="percentage-value">🔢 Value</label>
+          <input class="form-control" id="percentage-value" placeholder="e.g. 100" type="number"/>
+        </div>
+        <div class="form-group">
+          <label for="percentage">% Percentage</label>
+          <input class="form-control" id="percentage" placeholder="e.g. 15" type="number"/>
+        </div>
+        <button class="btn btn-primary" id="calculate-percentage">🧮 Calculate</button>
+        <div class="calculator-result" id="percentage-result"></div>
+      </div>
+      <div class="calculator-content" id="interest-calculator">
+        <div class="form-group">
+          <label for="principal-amount">💰 Principal Amount</label>
+          <input class="form-control" id="principal-amount" placeholder="e.g. 10000" type="number"/>
+        </div>
+        <div class="form-group">
+          <label for="interest-rate-simple">📈 Interest Rate (% p.a.)</label>
+          <input class="form-control" id="interest-rate-simple" placeholder="e.g. 5" type="number"/>
+        </div>
+        <div class="form-group">
+          <label for="time-period">⏳ Time Period (years)</label>
+          <input class="form-control" id="time-period" placeholder="e.g. 3" type="number"/>
+        </div>
+        <button class="btn btn-primary" id="calculate-interest">🧮 Calculate Interest</button>
+        <div class="calculator-result" id="interest-result"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="grocery">
+    <div class="section-title">
+      🛒 Grocery List
+      <button class="btn btn-primary" id="add-grocery-item" style="width: auto; padding: 8px 15px;">
+        <i class="fas fa-plus"></i> Add Item
+      </button>
+    </div>
+    <div class="grocery-list" id="grocery-container">
+      <div class="no-items">🛍️ Your grocery list is empty. Add some items!</div>
+    </div>
+  </div>
+
+  <!-- New Utility Tools Section -->
+  <div class="tab-content" id="tools">
+    <div class="section-title">
+      🛠️ Utility Tools
+    </div>
+    <div class="tools-container">
+      <div class="tools-grid">
+        <div class="tool-card" data-tool="bmi">
+          <i class="fas fa-weight"></i>
+          <h3>BMI Calculator</h3>
+          <p>Calculate your Body Mass Index</p>
+        </div>
+        <div class="tool-card" data-tool="age">
+          <i class="fas fa-birthday-cake"></i>
+          <h3>Age Calculator</h3>
+          <p>Calculate exact age from DOB</p>
+        </div>
+        <div class="tool-card" data-tool="discount">
+          <i class="fas fa-tag"></i>
+          <h3>Discount Calc</h3>
+          <p>Calculate final price after discount</p>
+        </div>
+        <div class="tool-card" data-tool="gst">
+          <i class="fas fa-receipt"></i>
+          <h3>GST Calculator</h3>
+          <p>Calculate GST amount & total</p>
+        </div>
+        <div class="tool-card" data-tool="sip">
+          <i class="fas fa-chart-line"></i>
+          <h3>SIP Calculator</h3>
+          <p>Calculate SIP returns</p>
+        </div>
+        <div class="tool-card" data-tool="qrcode">
+          <i class="fas fa-qrcode"></i>
+          <h3>QR Generator</h3>
+          <p>Generate QR codes</p>
+        </div>
+        <div class="tool-card" data-tool="tts">
+          <i class="fas fa-volume-up"></i>
+          <h3>Text to Speech</h3>
+          <p>Convert text to audio</p>
+        </div>
+        <div class="tool-card" data-tool="unit">
+          <i class="fas fa-exchange-alt"></i>
+          <h3>Unit Converter</h3>
+          <p>Convert km to miles</p>
+        </div>
+        <div class="tool-card" data-tool="base64">
+          <i class="fas fa-image"></i>
+          <h3>Base64 Encoder</h3>
+          <p>Convert image to Base64</p>
+        </div>
+        <div class="tool-card" data-tool="image-compressor">
+          <i class="fas fa-file-image"></i>
+          <h3>Image Compressor</h3>
+          <p>Reduce image file size</p>
+        </div>
+        <div class="tool-card" data-tool="password-generator">
+          <i class="fas fa-key"></i>
+          <h3>Password Generator</h3>
+          <p>Create strong passwords</p>
+        </div>
+        <div class="tool-card" data-tool="currency-converter">
+          <i class="fas fa-money-bill-wave"></i>
+          <h3>Currency Converter</h3>
+          <p>Convert between currencies</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modals -->
+<!-- Add Transaction Modal -->
+<div class="modal" id="transaction-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title">💸 Add Transaction</div>
+      <button class="close-modal">×</button>
+    </div>
+    <form id="transaction-form">
+      <div class="type-toggle">
+        <button class="active" data-type="expense" type="button">Expense ➖</button>
+        <button data-type="income" type="button">Income ➕</button>
+      </div>
+      <div class="form-group">
+        <label for="amount">💰 Amount</label>
+        <input class="form-control" id="amount" placeholder="0.00" required="" step="0.01" type="number"/>
+      </div>
+      <div class="form-group">
+        <label for="category">🏷️ Category</label>
+        <select class="form-control" id="category" required="">
+          <option value="">Select Category</option>
+          <option value="food">🍔 Food</option>
+          <option value="transport">🚗 Transport</option>
+          <option value="shopping">🛍️ Shopping</option>
+          <option value="housing">🏠 Housing</option>
+          <option value="entertainment">🎬 Entertainment</option>
+          <option value="salary">💼 Salary</option>
+          <option value="other">✨ Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">📅 Date</label>
+        <input class="form-control" id="date" required="" type="date"/>
+      </div>
+      <div class="form-group">
+        <label for="description">📝 Description (Optional)</label>
+        <input class="form-control" id="description" placeholder="Add a note" type="text"/>
+      </div>
+      <button class="btn btn-primary" type="submit">💾 Save Transaction</button>
+    </form>
+  </div>
+</div>
+
+<!-- Set Budget Modal -->
+<div class="modal" id="budget-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title">💰 Set Budget</div>
+      <button class="close-modal">×</button>
+    </div>
+    <form id="budget-form">
+      <div class="form-group">
+        <label for="budget-category">🏷️ Category</label>
+        <select class="form-control" id="budget-category" required="">
+          <option value="">Select Category</option>
+          <option value="food">🍔 Food</option>
+          <option value="transport">🚗 Transport</option>
+          <option value="shopping">🛍️ Shopping</option>
+          <option value="housing">🏠 Housing</option>
+          <option value="entertainment">🎬 Entertainment</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="budget-amount">💰 Budget Amount</label>
+        <input class="form-control" id="budget-amount" placeholder="0.00" required="" step="0.01" type="number"/>
+      </div>
+      <button class="btn btn-primary" type="submit">💾 Save Budget</button>
+    </form>
+  </div>
+</div>
+
+<!-- Add Grocery Item Modal -->
+<div class="modal" id="grocery-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title">🛒 Add Grocery Item</div>
+      <button class="close-modal">×</button>
+    </div>
+    <form id="grocery-form">
+      <div class="form-group">
+        <label for="grocery-name">📝 Item Name</label>
+        <input class="form-control" id="grocery-name" placeholder="e.g. Milk" required="" type="text"/>
+      </div>
+      <div class="form-group">
+        <label for="grocery-quantity">🔢 Quantity</label>
+        <input class="form-control" id="grocery-quantity" placeholder="e.g. 1 liter" type="text"/>
+      </div>
+      <button class="btn btn-primary" type="submit">💾 Add Item</button>
+    </form>
+  </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="confirmation-modal" id="confirmation-modal">
+  <div class="confirmation-content">
+    <h3>🗑️ Delete Transaction</h3>
+    <p>Are you sure you want to delete this transaction?</p>
+    <div class="confirmation-buttons">
+      <button class="confirmation-btn cancel-btn" id="cancel-delete">❌ Cancel</button>
+      <button class="confirmation-btn confirm-btn" id="confirm-delete">✅ Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- Tool Modals -->
+<div class="tool-modal" id="tool-modal">
+  <div class="tool-modal-content">
+    <div class="modal-header">
+      <div class="modal-title" id="tool-modal-title">Tool</div>
+      <button class="close-modal" id="close-tool-modal">×</button>
+    </div>
+    <div id="tool-modal-content">
+      <!-- Content will be loaded dynamically -->
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script>
+  // Data structure
+  let transactions = [];
+  let budgets = [];
+  let groceryList = [];
+  let currentCurrency = 'USD'; // Default currency
+
+  // Currency symbols and formatting
+  const currencySymbols = {
+    USD: '$',
+    EUR: '€',
+    GBP: '£',
+    JPY: '¥',
+    CAD: '$',
+    AUD: '$',
+    INR: '₹',
+    CNY: '¥'
+  };
+
+  // DOM Elements
+  const transactionsContainer = document.getElementById('transactions-container');
+  const budgetsContainer = document.getElementById('budgets-container');
+  const groceryContainer = document.getElementById('grocery-container');
+  const transactionModal = document.getElementById('transaction-modal');
+  const budgetModal = document.getElementById('budget-modal');
+  const groceryModal = document.getElementById('grocery-modal');
+  const transactionForm = document.getElementById('transaction-form');
+  const budgetForm = document.getElementById('budget-form');
+  const groceryForm = document.getElementById('grocery-form');
+  const typeToggleButtons = document.querySelectorAll('.type-toggle button');
+  const tabs = document.querySelectorAll('.tab');
+  const tabContents = document.querySelectorAll('.tab-content');
+  const calculatorTabs = document.querySelectorAll('.calculator-tab');
+  const calculatorContents = document.querySelectorAll('.calculator-content');
+  const addExpenseBtn = document.getElementById('add-expense');
+  const addIncomeBtn = document.getElementById('add-income');
+  const setBudgetBtn = document.getElementById('set-budget');
+  const viewCalculatorsBtn = document.getElementById('view-calculators');
+  const viewGroceryBtn = document.getElementById('view-grocery');
+  const viewToolsBtn = document.getElementById('view-tools');
+  const addGroceryBtn = document.getElementById('add-grocery-item');
+  const seeAllButtons = document.querySelectorAll('.see-all');
+  const totalBalanceEl = document.getElementById('total-balance');
+  const totalIncomeEl = document.getElementById('total-income');
+  const totalExpenseEl = document.getElementById('total-expense');
+  const confirmationModal = document.getElementById('confirmation-modal');
+  const cancelDeleteBtn = document.getElementById('cancel-delete');
+  const confirmDeleteBtn = document.getElementById('confirm-delete');
+  const calculateEmiBtn = document.getElementById('calculate-emi');
+  const calculatePercentageBtn = document.getElementById('calculate-percentage');
+  const calculateInterestBtn = document.getElementById('calculate-interest');
+  const currencySelector = document.getElementById('currency-selector');
+  const toolModal = document.getElementById('tool-modal');
+  const toolModalTitle = document.getElementById('tool-modal-title');
+  const toolModalContent = document.getElementById('tool-modal-content');
+  const closeToolModal = document.getElementById('close-tool-modal');
+  const toolCards = document.querySelectorAll('.tool-card');
+  
+  let spendingChart, categoryChart;
+  let transactionToDelete = null;
+
+  // Helper functions for localStorage
+  function saveDataToLocalStorage() {
+    localStorage.setItem('expenseTracker_transactions', JSON.stringify(transactions));
+    localStorage.setItem('expenseTracker_budgets', JSON.stringify(budgets));
+    localStorage.setItem('expenseTracker_grocery', JSON.stringify(groceryList));
+    localStorage.setItem('expenseTracker_currency', currentCurrency);
+  }
+
+  function loadDataFromLocalStorage() {
+    const savedTransactions = localStorage.getItem('expenseTracker_transactions');
+    const savedBudgets = localStorage.getItem('expenseTracker_budgets');
+    const savedGrocery = localStorage.getItem('expenseTracker_grocery');
+    const savedCurrency = localStorage.getItem('expenseTracker_currency');
+    
+    if (savedTransactions) {
+      transactions = JSON.parse(savedTransactions);
+    }
+    
+    if (savedBudgets) {
+      budgets = JSON.parse(savedBudgets);
+    }
+
+    if (savedGrocery) {
+      groceryList = JSON.parse(savedGrocery);
+    }
+
+    if (savedCurrency) {
+      currentCurrency = savedCurrency;
+      currencySelector.value = currentCurrency;
+    }
+  }
+
+  // Format currency based on current selection
+  function formatCurrency(amount) {
+    const symbol = currencySymbols[currentCurrency] || '$';
+    return `${symbol}${amount.toFixed(2)}`;
+  }
+
+  // Initialize the app
+  document.addEventListener('DOMContentLoaded', function() {
+    loadDataFromLocalStorage();
+    updateBalance();
+    renderTransactions();
+    renderBudgets();
+    renderGroceryList();
+    initCharts();
+    
+    // Set today's date as default in the form
+    document.getElementById('date').valueAsDate = new Date();
+  });
+
+  // Event Listeners
+  addExpenseBtn.addEventListener('click', () => openTransactionModal('expense'));
+  addIncomeBtn.addEventListener('click', () => openTransactionModal('income'));
+  setBudgetBtn.addEventListener('click', () => openBudgetModal());
+  viewCalculatorsBtn.addEventListener('click', () => showTab('calculators'));
+  viewGroceryBtn.addEventListener('click', () => showTab('grocery'));
+  viewToolsBtn.addEventListener('click', () => showTab('tools'));
+  addGroceryBtn.addEventListener('click', () => openGroceryModal());
+
+  currencySelector.addEventListener('change', function() {
+    currentCurrency = this.value;
+    saveDataToLocalStorage();
+    updateBalance();
+    renderTransactions();
+    renderBudgets();
+  });
+
+  typeToggleButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      typeToggleButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      const tabId = this.getAttribute('data-tab');
+      showTab(tabId);
+    });
+  });
+
+  calculatorTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      const calculatorId = this.getAttribute('data-calculator');
+      
+      calculatorTabs.forEach(t => t.classList.remove('active'));
+      calculatorContents.forEach(c => c.classList.remove('active'));
+      
+      this.classList.add('active');
+      document.getElementById(`${calculatorId}-calculator`).classList.add('active');
+    });
+  });
+
+  seeAllButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      alert('This would show all transactions/budgets in a separate view');
+    });
+  });
+
+  transactionForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const type = document.querySelector('.type-toggle button.active').getAttribute('data-type');
+    const amount = parseFloat(document.getElementById('amount').value);
+    const category = document.getElementById('category').value;
+    const date = document.getElementById('date').value;
+    const description = document.getElementById('description').value;
+    
+    if (!amount || !category || !date) {
+      alert('Please fill in all required fields');
+      return;
+    }
+    
+    const newTransaction = {
+      id: Date.now(),
+      type,
+      amount,
+      category,
+      date,
+      description: description || `${category} ${type}`
+    };
+    
+    transactions.unshift(newTransaction);
+    updateBalance();
+    
+    saveDataToLocalStorage();
+    renderTransactions();
+    updateCharts();
+    
+    closeTransactionModal();
+    transactionForm.reset();
+    document.getElementById('date').valueAsDate = new Date();
+  });
+
+  budgetForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const category = document.getElementById('budget-category').value;
+    const amount = parseFloat(document.getElementById('budget-amount').value);
+    
+    if (!category || !amount) {
+      alert('Please fill in all fields');
+      return;
+    }
+    
+    // Update or add budget
+    const existingBudgetIndex = budgets.findIndex(b => b.category === category);
+    if (existingBudgetIndex >= 0) {
+      budgets[existingBudgetIndex].budget = amount;
+    } else {
+      budgets.push({
+        category,
+        budget: amount,
+        spent: 0
+      });
+    }
+    
+    saveDataToLocalStorage();
+    renderBudgets();
+    closeBudgetModal();
+    budgetForm.reset();
+  });
+
+  groceryForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('grocery-name').value;
+    const quantity = document.getElementById('grocery-quantity').value;
+    
+    if (!name) {
+      alert('Please enter an item name');
+      return;
+    }
+    
+    const newItem = {
+      id: Date.now(),
+      name,
+      quantity: quantity || '1',
+      completed: false
+    };
+    
+    groceryList.unshift(newItem);
+    saveDataToLocalStorage();
+    renderGroceryList();
+    
+    closeGroceryModal();
+    groceryForm.reset();
+  });
+
+  document.querySelectorAll('.close-modal').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const modal = this.closest('.modal');
+      modal.style.display = 'none';
+    });
+  });
+
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.style.display = 'none';
+      }
+    });
+  });
+
+  cancelDeleteBtn.addEventListener('click', closeConfirmationModal);
+  confirmDeleteBtn.addEventListener('click', function() {
+    if (transactionToDelete) {
+      deleteTransaction(transactionToDelete);
+      closeConfirmationModal();
+    }
+  });
+
+  calculateEmiBtn.addEventListener('click', calculateEMI);
+  calculatePercentageBtn.addEventListener('click', calculatePercentage);
+  calculateInterestBtn.addEventListener('click', calculateInterest);
+
+  // Tool card click handlers
+  toolCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const tool = this.getAttribute('data-tool');
+      openToolModal(tool);
+    });
+  });
+
+  closeToolModal.addEventListener('click', () => {
+    toolModal.style.display = 'none';
+  });
+
+  // Functions
+  function showTab(tabId) {
+    tabs.forEach(t => t.classList.remove('active'));
+    tabContents.forEach(c => c.classList.remove('active'));
+    
+    document.querySelector(`.tab[data-tab="${tabId}"]`).classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+  }
+
+  function openTransactionModal(type) {
+    transactionModal.style.display = 'flex';
+    typeToggleButtons.forEach(button => {
+      button.classList.remove('active');
+      if (button.getAttribute('data-type') === type) {
+        button.classList.add('active');
+      }
+    });
+    
+    setTimeout(() => {
+      document.getElementById('amount').focus();
+    }, 100);
+  }
+
+  function openBudgetModal() {
+    budgetModal.style.display = 'flex';
+    setTimeout(() => {
+      document.getElementById('budget-category').focus();
+    }, 100);
+  }
+
+  function openGroceryModal() {
+    groceryModal.style.display = 'flex';
+    setTimeout(() => {
+      document.getElementById('grocery-name').focus();
+    }, 100);
+  }
+
+  function openConfirmationModal(transactionId) {
+    transactionToDelete = transactionId;
+    confirmationModal.style.display = 'flex';
+  }
+
+  function closeTransactionModal() {
+    transactionModal.style.display = 'none';
+  }
+
+  function closeBudgetModal() {
+    budgetModal.style.display = 'none';
+  }
+
+  function closeGroceryModal() {
+    groceryModal.style.display = 'none';
+  }
+
+  function closeConfirmationModal() {
+    transactionToDelete = null;
+    confirmationModal.style.display = 'none';
+  }
+
+  function deleteTransaction(transactionId) {
+    transactions = transactions.filter(t => t.id !== transactionId);
+    saveDataToLocalStorage();
+    updateBalance();
+    renderTransactions();
+    updateCharts();
+  }
+
+  function toggleGroceryItem(itemId) {
+    const item = groceryList.find(item => item.id === itemId);
+    if (item) {
+      item.completed = !item.completed;
+      saveDataToLocalStorage();
+      renderGroceryList();
+    }
+  }
+
+  function removeGroceryItem(itemId) {
+    groceryList = groceryList.filter(item => item.id !== itemId);
+    saveDataToLocalStorage();
+    renderGroceryList();
+  }
+
+  function updateBalance() {
+    const income = transactions
+      .filter(t => t.type === 'income')
+      .reduce((sum, t) => sum + t.amount, 0);
+    
+    const expenses = transactions
+      .filter(t => t.type === 'expense')
+      .reduce((sum, t) => sum + t.amount, 0);
+    
+    const balance = income - expenses;
+    
+    totalBalanceEl.textContent = formatCurrency(balance);
+    totalIncomeEl.textContent = formatCurrency(income);
+    totalExpenseEl.textContent = formatCurrency(expenses);
+  }
+
+  function renderTransactions() {
+    transactionsContainer.innerHTML = '';
+    
+    if (transactions.length === 0) {
+      transactionsContainer.innerHTML = '<div class="no-transactions">📭 No transactions yet. Add your first transaction!</div>';
+      return;
+    }
+    
+    const sortedTransactions = [...transactions].sort((a, b) => new Date(b.date) - new Date(a.date));
+    
+    sortedTransactions.slice(0, 5).forEach(transaction => {
+      const transactionEl = document.createElement('div');
+      transactionEl.className = 'transaction-item';
+      
+      const categoryIcon = getCategoryIcon(transaction.category);
+      const formattedDate = formatDate(transaction.date);
+      const amountClass = transaction.type === 'income' ? 'income' : 'expense';
+      
+      transactionEl.innerHTML = `
+        <div class="transaction-left">
+          <div class="transaction-icon">
+            ${getCategoryEmoji(transaction.category)}
+          </div>
+          <div class="transaction-info">
+            <h4>${transaction.description}</h4>
+            <p>${formattedDate}</p>
+          </div>
+        </div>
+        <div class="transaction-amount ${amountClass}">
+          ${transaction.type === 'expense' ? '-' : '+'}${formatCurrency(transaction.amount)}
+          <button class="delete-btn" data-id="${transaction.id}">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      `;
+      
+      transactionsContainer.appendChild(transactionEl);
+    });
+
+    document.querySelectorAll('.delete-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const transactionId = parseInt(this.getAttribute('data-id'));
+        openConfirmationModal(transactionId);
+      });
+    });
+  }
+
+  function renderBudgets() {
+    budgetsContainer.innerHTML = '';
+    
+    if (budgets.length === 0) {
+      budgetsContainer.innerHTML = '<div class="no-budgets">📭 No budgets set up yet. Create your first budget!</div>';
+      return;
+    }
+    
+    budgets.forEach(budget => {
+      const budgetEl = document.createElement('div');
+      budgetEl.className = 'budget-item';
+      
+      budgetEl.innerHTML = `
+        <div class="budget-header">
+          <div class="budget-category">
+            <span>${getCategoryEmoji(budget.category)}</span>
+            ${capitalizeFirstLetter(budget.category)}
+          </div>
+          <div class="budget-amount">
+            ${formatCurrency(budget.budget)}
+          </div>
+        </div>
+      `;
+      
+      budgetsContainer.appendChild(budgetEl);
+    });
+  }
+
+  function renderGroceryList() {
+    groceryContainer.innerHTML = '';
+    
+    if (groceryList.length === 0) {
+      groceryContainer.innerHTML = '<div class="no-items">🛍️ Your grocery list is empty. Add some items!</div>';
+      return;
+    }
+    
+    groceryList.forEach(item => {
+      const itemEl = document.createElement('div');
+      itemEl.className = 'grocery-item';
+      
+      itemEl.innerHTML = `
+        <div>
+          <input type="checkbox" id="item-${item.id}" ${item.completed ? 'checked' : ''}>
+          <span class="item-name" style="${item.completed ? 'text-decoration: line-through; color: var(--gray);' : ''}">
+            ${item.name}
+          </span>
+        </div>
+        <div>
+          <span class="item-quantity">${item.quantity}</span>
+          <button class="delete-btn" data-id="${item.id}">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      `;
+      
+      groceryContainer.appendChild(itemEl);
+      
+      // Add event listeners
+      document.getElementById(`item-${item.id}`).addEventListener('change', () => toggleGroceryItem(item.id));
+      itemEl.querySelector('.delete-btn').addEventListener('click', (e) => {
+        e.stopPropagation();
+        removeGroceryItem(item.id);
+      });
+    });
+  }
+
+  function calculateEMI() {
+    const principal = parseFloat(document.getElementById('loan-amount').value);
+    const rate = parseFloat(document.getElementById('interest-rate').value) / 100 / 12;
+    const months = parseFloat(document.getElementById('loan-tenure').value);
+    
+    if (!principal || !rate || !months) {
+      alert('Please fill in all fields');
+      return;
+    }
+    
+    const emi = principal * rate * Math.pow(1 + rate, months) / (Math.pow(1 + rate, months) - 1);
+    const totalPayment = emi * months;
+    const totalInterest = totalPayment - principal;
+    
+    document.getElementById('emi-result').innerHTML = `
+      <p>📅 Monthly EMI: <strong>${formatCurrency(emi)}</strong></p>
+      <p>💰 Total Payment: <strong>${formatCurrency(totalPayment)}</strong></p>
+      <p>💸 Total Interest: <strong>${formatCurrency(totalInterest)}</strong></p>
+    `;
+  }
+
+  function calculatePercentage() {
+    const value = parseFloat(document.getElementById('percentage-value').value);
+    const percentage = parseFloat(document.getElementById('percentage').value);
+    
+    if (!value || !percentage) {
+      alert('Please fill in all fields');
+      return;
+    }
+    
+    const result = (value * percentage) / 100;
+    
+    document.getElementById('percentage-result').innerHTML = `
+      <p>${percentage}% of ${formatCurrency(value)} = <strong>${formatCurrency(result)}</strong></p>
+      <p>📊 ${percentage}% of ${formatCurrency(value)} is <strong>${formatCurrency(result)}</strong></p>
+    `;
+  }
+
+  function calculateInterest() {
+    const principal = parseFloat(document.getElementById('principal-amount').value);
+    const rate = parseFloat(document.getElementById('interest-rate-simple').value) / 100;
+    const years = parseFloat(document.getElementById('time-period').value);
+    
+    if (!principal || !rate || !years) {
+      alert('Please fill in all fields');
+      return;
+    }
+    
+    const interest = principal * rate * years;
+    const total = principal + interest;
+    
+    document.getElementById('interest-result').innerHTML = `
+      <p>💵 Simple Interest: <strong>${formatCurrency(interest)}</strong></p>
+      <p>💰 Total Amount: <strong>${formatCurrency(total)}</strong></p>
+      <p>📅 Over ${years} year${years > 1 ? 's' : ''}</p>
+    `;
+  }
+
+  function initCharts() {
+    const spendingCtx = document.getElementById('spendingChart').getContext('2d');
+    spendingChart = new Chart(spendingCtx, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Weekly Spending',
+          data: [0, 0, 0, 0, 0, 0, 0],
+          borderColor: 'rgba(44, 185, 176, 1)',
+          backgroundColor: 'rgba(44, 185, 176, 0.2)',
+          tension: 0.4,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          }
+        }
+      }
+    });
+
+    const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+    categoryChart = new Chart(categoryCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['No data'],
+        datasets: [{
+          data: [1],
+          backgroundColor: ['rgba(200, 200, 200, 0.7)'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+          }
+        }
+      }
+    });
+  }
+
+  function updateCharts() {
+    // This would update charts with real data in a full implementation
+  }
+
+  function getCategoryIcon(category) {
+    const icons = {
+      food: 'fa-utensils',
+      transport: 'fa-car',
+      shopping: 'fa-shopping-bag',
+      housing: 'fa-home',
+      entertainment: 'fa-film',
+      salary: 'fa-money-bill-wave',
+      other: 'fa-ellipsis-h'
+    };
+    return icons[category] || 'fa-ellipsis-h';
+  }
+
+  function getCategoryEmoji(category) {
+    const emojis = {
+      food: '🍔',
+      transport: '🚗',
+      shopping: '🛍️',
+      housing: '🏠',
+      entertainment: '🎬',
+      salary: '💰',
+      other: '✨'
+    };
+    return emojis[category] || '✨';
+  }
+
+  function formatDate(dateString, short = false) {
+    if (!dateString) return '';
+    
+    const date = new Date(dateString);
+    const today = new Date();
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+    
+    if (date.toDateString() === today.toDateString()) {
+      return 'Today';
+    } else if (date.toDateString() === yesterday.toDateString()) {
+      return 'Yesterday';
+    } else if (short) {
+      return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    } else {
+      return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+    }
+  }
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  // Tool Modal Functions
+  function openToolModal(tool) {
+    toolModal.style.display = 'flex';
+    toolModalTitle.textContent = getToolTitle(tool);
+    toolModalContent.innerHTML = getToolContent(tool);
+    
+    // Initialize any tool-specific functionality
+    initToolFunctionality(tool);
+  }
+
+  function getToolTitle(tool) {
+    const titles = {
+      'bmi': '⚖️ BMI Calculator',
+      'age': '🎂 Age Calculator',
+      'discount': '💸 Discount Calculator',
+      'gst': '📊 GST Calculator',
+      'sip': '📈 SIP Calculator',
+      'qrcode': '📷 QR Code Generator',
+      'tts': '🔊 Text to Speech',
+      'unit': '🔁 Unit Converter (KM to Miles)',
+      'base64': '🧬 Base64 Image Encoder',
+      'image-compressor': '🖼️ Image Compressor',
+      'password-generator': '🔑 Password Generator',
+      'currency-converter': '💱 Currency Converter'
+    };
+    return titles[tool] || 'Tool';
+  }
+
+  function getToolContent(tool) {
+    const contents = {
+      'bmi': `
+        <div class="form-group">
+          <label for="bmi-height">Height (cm):</label>
+          <input class="form-control" id="bmi-height" type="number" placeholder="e.g. 175">
+        </div>
+        <div class="form-group">
+          <label for="bmi-weight">Weight (kg):</label>
+          <input class="form-control" id="bmi-weight" type="number" placeholder="e.g. 70">
+        </div>
+        <button class="btn btn-primary" id="calculate-bmi">Calculate BMI</button>
+        <div class="tool-result" id="bmi-result"></div>
+      `,
+      'age': `
+        <div class="form-group">
+          <label for="age-dob">Date of Birth:</label>
+          <input class="form-control" id="age-dob" type="date">
+        </div>
+        <button class="btn btn-primary" id="calculate-age">Calculate Age</button>
+        <div class="tool-result" id="age-result"></div>
+      `,
+      'discount': `
+        <div class="form-group">
+          <label for="discount-price">Original Price:</label>
+          <input class="form-control" id="discount-price" type="number" placeholder="e.g. 100">
+        </div>
+        <div class="form-group">
+          <label for="discount-percent">Discount (%):</label>
+          <input class="form-control" id="discount-percent" type="number" placeholder="e.g. 15">
+        </div>
+        <button class="btn btn-primary" id="calculate-discount">Calculate</button>
+        <div class="tool-result" id="discount-result"></div>
+      `,
+      'gst': `
+        <div class="form-group">
+          <label for="gst-price">Price:</label>
+          <input class="form-control" id="gst-price" type="number" placeholder="e.g. 1000">
+        </div>
+        <div class="form-group">
+          <label for="gst-rate">GST Rate (%):</label>
+          <input class="form-control" id="gst-rate" type="number" placeholder="e.g. 18">
+        </div>
+        <button class="btn btn-primary" id="calculate-gst">Calculate</button>
+        <div class="tool-result" id="gst-result"></div>
+      `,
+      'sip': `
+        <div class="form-group">
+          <label for="sip-amount">Monthly Investment:</label>
+          <input class="form-control" id="sip-amount" type="number" placeholder="e.g. 5000">
+        </div>
+        <div class="form-group">
+          <label for="sip-years">Years:</label>
+          <input class="form-control" id="sip-years" type="number" placeholder="e.g. 5">
+        </div>
+        <div class="form-group">
+          <label for="sip-rate">Expected Return Rate (%):</label>
+          <input class="form-control" id="sip-rate" type="number" placeholder="e.g. 12">
+        </div>
+        <button class="btn btn-primary" id="calculate-sip">Calculate</button>
+        <div class="tool-result" id="sip-result"></div>
+      `,
+      'qrcode': `
+        <div class="form-group">
+          <label for="qr-text">Text/URL:</label>
+          <input class="form-control" id="qr-text" type="text" placeholder="Enter text or URL">
+        </div>
+        <button class="btn btn-primary" id="generate-qr">Generate QR Code</button>
+        <div id="qr-code-result" style="margin-top: 20px; text-align: center;"></div>
+      `,
+      'tts': `
+        <div class="form-group">
+          <label for="tts-text">Enter Text:</label>
+          <textarea class="form-control" id="tts-text" rows="4" placeholder="Type what you want to hear"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="tts-voice">Voice:</label>
+          <select class="form-control" id="tts-voice">
+            <option value="">Default</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" id="speak-text">Speak</button>
+        <button class="btn" id="stop-speech" style="margin-top: 10px; background-color: #f44336; color: white;">Stop</button>
+      `,
+      'unit': `
+        <div class="form-group">
+          <label for="unit-km">Kilometers:</label>
+          <input class="form-control" id="unit-km" type="number" placeholder="e.g. 10">
+        </div>
+        <button class="btn btn-primary" id="convert-km">Convert to Miles</button>
+        <div class="tool-result" id="unit-result"></div>
+      `,
+      'base64': `
+        <div class="form-group">
+          <label for="base64-file">Select Image:</label>
+          <input class="form-control" id="base64-file" type="file" accept="image/*">
+        </div>
+        <button class="btn btn-primary" id="convert-base64">Convert to Base64</button>
+        <div class="form-group" style="margin-top: 15px;">
+          <label for="base64-output">Base64 Result:</label>
+          <textarea class="form-control" id="base64-output" rows="5" readonly></textarea>
+        </div>
+      `,
+      'image-compressor': `
+        <div class="form-group">
+          <label for="compress-file">Select Image:</label>
+          <input class="form-control" id="compress-file" type="file" accept="image/*">
+        </div>
+        <div class="form-group">
+          <label for="compress-quality">Quality (0.1-1.0):</label>
+          <input class="form-control" id="compress-quality" type="number" min="0.1" max="1" step="0.1" value="0.7">
+        </div>
+        <button class="btn btn-primary" id="compress-image">Compress & Download</button>
+        <canvas id="compress-canvas" style="display: none;"></canvas>
+      `,
+      'password-generator': `
+        <div class="form-group">
+          <label for="pass-length">Password Length:</label>
+          <input class="form-control" id="pass-length" type="number" min="8" max="32" value="12">
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="pass-uppercase" checked> Uppercase Letters
+          </label>
+          <label>
+            <input type="checkbox" id="pass-lowercase" checked> Lowercase Letters
+          </label>
+          <label>
+            <input type="checkbox" id="pass-numbers" checked> Numbers
+          </label>
+          <label>
+            <input type="checkbox" id="pass-symbols" checked> Symbols
+          </label>
+        </div>
+        <button class="btn btn-primary" id="generate-pass">Generate Password</button>
+        <div class="tool-result" id="pass-result" style="cursor: pointer;"></div>
+        <button class="btn" id="copy-pass" style="margin-top: 10px; display: none;">Copy to Clipboard</button>
+      `,
+      'currency-converter': `
+        <div class="form-group">
+          <label for="convert-amount">Amount:</label>
+          <input class="form-control" id="convert-amount" type="number" placeholder="e.g. 100">
+        </div>
+        <div class="form-group">
+          <label for="convert-from">From:</label>
+          <select class="form-control" id="convert-from">
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="JPY">JPY (¥)</option>
+            <option value="INR">INR (₹)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="convert-to">To:</label>
+          <select class="form-control" id="convert-to">
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="JPY">JPY (¥)</option>
+            <option value="INR">INR (₹)</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" id="convert-currency">Convert</button>
+        <div class="tool-result" id="currency-result"></div>
+      `
+    };
+    return contents[tool] || '<p>Tool content not available</p>';
+  }
+
+  function initToolFunctionality(tool) {
+    switch(tool) {
+      case 'bmi':
+        document.getElementById('calculate-bmi').addEventListener('click', calculateBMI);
+        break;
+      case 'age':
+        document.getElementById('calculate-age').addEventListener('click', calculateAge);
+        break;
+      case 'discount':
+        document.getElementById('calculate-discount').addEventListener('click', calculateDiscount);
+        break;
+      case 'gst':
+        document.getElementById('calculate-gst').addEventListener('click', calculateGST);
+        break;
+      case 'sip':
+        document.getElementById('calculate-sip').addEventListener('click', calculateSIP);
+        break;
+      case 'qrcode':
+        document.getElementById('generate-qr').addEventListener('click', generateQR);
+        break;
+      case 'tts':
+        initTextToSpeech();
+        break;
+      case 'unit':
+        document.getElementById('convert-km').addEventListener('click', convertKM);
+        break;
+      case 'base64':
+        document.getElementById('convert-base64').addEventListener('click', convertToBase64);
+        break;
+      case 'image-compressor':
+        document.getElementById('compress-image').addEventListener('click', compressImage);
+        break;
+      case 'password-generator':
+        document.getElementById('generate-pass').addEventListener('click', generatePassword);
+        break;
+      case 'currency-converter':
+        document.getElementById('convert-currency').addEventListener('click', convertCurrency);
+        break;
+    }
+  }
+
+  // Tool Functions
+  function calculateBMI() {
+    const height = parseFloat(document.getElementById('bmi-height').value) / 100; // convert to meters
+    const weight = parseFloat(document.getElementById('bmi-weight').value);
+    
+    if (!height || !weight) {
+      alert('Please enter both height and weight');
+      return;
+    }
+    
+    const bmi = (weight / (height * height)).toFixed(1);
+    let category = '';
+    
+    if (bmi < 18.5) category = 'Underweight';
+    else if (bmi < 25) category = 'Normal weight';
+    else if (bmi < 30) category = 'Overweight';
+    else category = 'Obese';
+    
+    document.getElementById('bmi-result').innerHTML = `
+      <p>Your BMI: <strong>${bmi}</strong></p>
+      <p>Category: <strong>${category}</strong></p>
+      <p>Healthy BMI range: 18.5 - 25</p>
+    `;
+  }
+
+  function calculateAge() {
+    const dob = new Date(document.getElementById('age-dob').value);
+    if (!dob.getTime()) {
+      alert('Please select a valid date of birth');
+      return;
+    }
+    
+    const today = new Date();
+    let age = today.getFullYear() - dob.getFullYear();
+    const monthDiff = today.getMonth() - dob.getMonth();
+    
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+      age--;
+    }
+    
+    document.getElementById('age-result').innerHTML = `
+      <p>Your age: <strong>${age} years</strong></p>
+      <p>Date of Birth: <strong>${dob.toLocaleDateString()}</strong></p>
+    `;
+  }
+
+  function calculateDiscount() {
+    const price = parseFloat(document.getElementById('discount-price').value);
+    const discount = parseFloat(document.getElementById('discount-percent').value);
+    
+    if (!price || !discount) {
+      alert('Please enter both price and discount');
+      return;
+    }
+    
+    const discountAmount = (price * discount / 100).toFixed(2);
+    const finalPrice = (price - discountAmount).toFixed(2);
+    
+    document.getElementById('discount-result').innerHTML = `
+      <p>Original Price: <strong>${formatCurrency(price)}</strong></p>
+      <p>Discount (${discount}%): <strong>${formatCurrency(discountAmount)}</strong></p>
+      <p>Final Price: <strong>${formatCurrency(finalPrice)}</strong></p>
+    `;
+  }
+
+  function calculateGST() {
+    const price = parseFloat(document.getElementById('gst-price').value);
+    const rate = parseFloat(document.getElementById('gst-rate').value);
+    
+    if (!price || !rate) {
+      alert('Please enter both price and GST rate');
+      return;
+    }
+    
+    const gstAmount = (price * rate / 100).toFixed(2);
+    const totalPrice = (price + parseFloat(gstAmount)).toFixed(2);
+    
+    document.getElementById('gst-result').innerHTML = `
+      <p>Base Price: <strong>${formatCurrency(price)}</strong></p>
+      <p>GST (${rate}%): <strong>${formatCurrency(gstAmount)}</strong></p>
+      <p>Total Price: <strong>${formatCurrency(totalPrice)}</strong></p>
+    `;
+  }
+
+  function calculateSIP() {
+    const amount = parseFloat(document.getElementById('sip-amount').value);
+    const years = parseFloat(document.getElementById('sip-years').value);
+    const rate = parseFloat(document.getElementById('sip-rate').value) / 100 / 12; // monthly rate
+    
+    if (!amount || !years || !rate) {
+      alert('Please fill all fields');
+      return;
+    }
+    
+    const months = years * 12;
+    const futureValue = amount * ((Math.pow(1 + rate, months) - 1) / rate) * (1 + rate);
+    const totalInvested = amount * months;
+    const earnings = futureValue - totalInvested;
+    
+    document.getElementById('sip-result').innerHTML = `
+      <p>Monthly Investment: <strong>${formatCurrency(amount)}</strong></p>
+      <p>Investment Period: <strong>${years} years (${months} months)</strong></p>
+      <p>Expected Return Rate: <strong>${(rate * 12 * 100).toFixed(2)}% p.a.</strong></p>
+      <p>Total Invested: <strong>${formatCurrency(totalInvested)}</strong></p>
+      <p>Estimated Earnings: <strong>${formatCurrency(earnings)}</strong></p>
+      <p>Future Value: <strong>${formatCurrency(futureValue)}</strong></p>
+    `;
+  }
+
+  function generateQR() {
+    const text = document.getElementById('qr-text').value;
+    if (!text) {
+      alert('Please enter text or URL');
+      return;
+    }
+    
+    const qrDiv = document.getElementById('qr-code-result');
+    qrDiv.innerHTML = '';
+    
+    QRCode.toCanvas(text, { width: 200 }, (err, canvas) => {
+      if (err) {
+        alert('Error generating QR code');
+        return;
+      }
+      
+      qrDiv.appendChild(canvas);
+      
+      // Add download button
+      const downloadBtn = document.createElement('button');
+      downloadBtn.className = 'btn btn-primary';
+      downloadBtn.style.marginTop = '10px';
+      downloadBtn.textContent = 'Download QR Code';
+      downloadBtn.addEventListener('click', () => {
+        const link = document.createElement('a');
+        link.download = 'qr-code.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+      
+      qrDiv.appendChild(downloadBtn);
+    });
+  }
+
+  function initTextToSpeech() {
+    // Load available voices
+    function loadVoices() {
+      const voices = window.speechSynthesis.getVoices();
+      const voiceSelect = document.getElementById('tts-voice');
+      
+      voices.forEach(voice => {
+        const option = document.createElement('option');
+        option.value = voice.name;
+        option.textContent = `${voice.name} (${voice.lang})`;
+        voiceSelect.appendChild(option);
+      });
+    }
+    
+    // Chrome needs this
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+    loadVoices();
+    
+    // Set up speak button
+    document.getElementById('speak-text').addEventListener('click', () => {
+      const text = document.getElementById('tts-text').value;
+      if (!text) {
+        alert('Please enter text to speak');
+        return;
+      }
+      
+      const utterance = new SpeechSynthesisUtterance(text);
+      const voiceName = document.getElementById('tts-voice').value;
+      
+      if (voiceName) {
+        const voices = window.speechSynthesis.getVoices();
+        const selectedVoice = voices.find(voice => voice.name === voiceName);
+        if (selectedVoice) {
+          utterance.voice = selectedVoice;
+        }
+      }
+      
+      window.speechSynthesis.speak(utterance);
+    });
+    
+    // Set up stop button
+    document.getElementById('stop-speech').addEventListener('click', () => {
+      window.speechSynthesis.cancel();
+    });
+  }
+
+  function convertKM() {
+    const km = parseFloat(document.getElementById('unit-km').value);
+    if (!km) {
+      alert('Please enter kilometers value');
+      return;
+    }
+    
+    const miles = (km * 0.621371).toFixed(2);
+    document.getElementById('unit-result').innerHTML = `
+      <p>${km} kilometers = <strong>${miles} miles</strong></p>
+    `;
+  }
+
+  function convertToBase64() {
+    const fileInput = document.getElementById('base64-file');
+    const file = fileInput.files[0];
+    
+    if (!file) {
+      alert('Please select an image file');
+      return;
+    }
+    
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById('base64-output').value = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function compressImage() {
+    const fileInput = document.getElementById('compress-file');
+    const quality = parseFloat(document.getElementById('compress-quality').value);
+    const file = fileInput.files[0];
+    
+    if (!file) {
+      alert('Please select an image file');
+      return;
+    }
+    
+    if (quality < 0.1 || quality > 1) {
+      alert('Quality must be between 0.1 and 1.0');
+      return;
+    }
+    
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const img = new Image();
+      img.onload = function() {
+        const canvas = document.getElementById('compress-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        
+        canvas.toBlob(blob => {
+          const link = document.createElement('a');
+          link.download = 'compressed_' + file.name;
+          link.href = URL.createObjectURL(blob);
+          link.click();
+        }, 'image/jpeg', quality);
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function generatePassword() {
+    const length = parseInt(document.getElementById('pass-length').value);
+    const hasUpper = document.getElementById('pass-uppercase').checked;
+    const hasLower = document.getElementById('pass-lowercase').checked;
+    const hasNumbers = document.getElementById('pass-numbers').checked;
+    const hasSymbols = document.getElementById('pass-symbols').checked;
+    
+    if (!hasUpper && !hasLower && !hasNumbers && !hasSymbols) {
+      alert('Please select at least one character type');
+      return;
+    }
+    
+    let chars = '';
+    if (hasUpper) chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    if (hasLower) chars += 'abcdefghijklmnopqrstuvwxyz';
+    if (hasNumbers) chars += '0123456789';
+    if (hasSymbols) chars += '!@#$%^&*()_+~`|}{[]:;?><,./-=';
+    
+    let password = '';
+    for (let i = 0; i < length; i++) {
+      password += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    
+    const passResult = document.getElementById('pass-result');
+    passResult.innerHTML = `<strong>${password}</strong>`;
+    
+    const copyBtn = document.getElementById('copy-pass');
+    copyBtn.style.display = 'block';
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(password);
+      copyBtn.textContent = 'Copied!';
+      setTimeout(() => {
+        copyBtn.textContent = 'Copy to Clipboard';
+      }, 2000);
+    });
+  }
+
+  function convertCurrency() {
+    const amount = parseFloat(document.getElementById('convert-amount').value);
+    const from = document.getElementById('convert-from').value;
+    const to = document.getElementById('convert-to').value;
+    
+    if (!amount) {
+      alert('Please enter an amount');
+      return;
+    }
+    
+    if (from === to) {
+      document.getElementById('currency-result').innerHTML = `
+        <p>Same currencies selected. No conversion needed.</p>
+      `;
+      return;
+    }
+    
+    // In a real app, you would fetch rates from an API
+    // For demo, we'll use hardcoded rates (not accurate)
+    const rates = {
+      USD: { EUR: 0.85, GBP: 0.73, JPY: 110.5, INR: 75.2 },
+      EUR: { USD: 1.18, GBP: 0.86, JPY: 130.2, INR: 88.5 },
+      GBP: { USD: 1.37, EUR: 1.16, JPY: 151.3, INR: 103.1 },
+      JPY: { USD: 0.009, EUR: 0.0077, GBP: 0.0066, INR: 0.68 },
+      INR: { USD: 0.013, EUR: 0.011, GBP: 0.0097, JPY: 1.47 }
+    };
+    
+    const rate = rates[from][to];
+    const converted = (amount * rate).toFixed(2);
+    
+    document.getElementById('currency-result').innerHTML = `
+      <p>${amount} ${from} = <strong>${converted} ${to}</strong></p>
+      <p>Exchange Rate: 1 ${from} = ${rate} ${to}</p>
+      <p style="font-size: 12px; color: var(--gray);">Note: Demo uses hardcoded rates. For accurate conversion, use a live API.</p>
+    `;
+  }
+</script>
+</body>
+</html>
