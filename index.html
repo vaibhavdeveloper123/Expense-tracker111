@@ -3,67 +3,413 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to ExpenseWise</title>
-    <link rel="stylesheet" href="style.css"> 
+    <title>ExpenseWise | Smart Money Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
-        /* Yeh CSS code landing page ko style karega */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
+        /* ======================================= */
+        /* CSS (style.css) START */
+        /* ======================================= */
+
+        /* General Reset and Typography */
+        :root {
+            --primary-color: #007bff; /* Bright Blue */
+            --secondary-color: #28a745; /* Green */
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
         }
-        .landing-container {
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Smooth scrolling for navigation */
+        }
+
+        /* Reusable Components */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .full-screen {
+            height: 100vh; /* Make the section cover the entire viewport height */
+            min-height: 600px;
+        }
+
+        /* Buttons */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .secondary-cta {
+            background-color: var(--secondary-color);
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+        }
+
+        .secondary-cta:hover {
+            background-color: #1e7e34;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-nav-button {
+            padding: 8px 18px;
+            background-color: var(--primary-color);
+            color: #fff !important;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-nav-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* 1. Hero Section Styling */
+        .hero-section {
+            background: linear-gradient(135deg, #f0f2f5 0%, #ffffff 100%);
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 550px;
+        }
+
+        .hero-text h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text h2 span {
+            color: var(--primary-color);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: #f0f2f5;
+            color: var(--primary-color);
+            opacity: 0.8;
+        }
+
+        /* 2. Features Section Styling */
+        .features-section {
+            padding: 80px 0;
+            background-color: var(--bg-light);
             text-align: center;
         }
-        .landing-content {
-            background: #ffffff;
-            padding: 40px;
+
+        .features-section h3 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            font-weight: 600;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
         }
-        .landing-content h1 {
-            font-size: 2.2rem;
-            color: #333;
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
-        .landing-content h1 span {
-            color: #007bff; /* Aapka brand color */
+
+        .feature-card i {
+            color: var(--primary-color);
+            margin-bottom: 15px;
         }
-        .landing-content p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 30px;
+
+        .feature-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
         }
-        .cta-button {
-            display: inline-block;
-            padding: 12px 25px;
-            font-size: 1rem;
-            font-weight: bold;
+
+        .feature-card p {
+            color: var(--text-light);
+        }
+
+        /* 3. CTA Section Styling */
+        .cta-section {
+            background: var(--primary-color);
             color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-section h2 span {
+            color: var(--secondary-color);
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        /* Footer Styling */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ccc;
             text-decoration: none;
-            transition: background-color 0.3s ease;
+            margin: 0 5px;
         }
-        .cta-button:hover {
-            background-color: #0056b3;
+
+        footer a:hover {
+            color: #fff;
         }
+
+        /* Animation CSS (script.js ke liye) */
+        .hero-section.visible, 
+        .features-section.visible, 
+        .cta-section.visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 50px;
+            }
+            .hero-text h2 {
+                font-size: 2.5rem;
+            }
+            .hero-image i {
+                font-size: 6em;
+                margin-bottom: 30px;
+            }
+            .nav-links {
+                display: none; /* Simple nav for mobile */
+            }
+            .navbar .container {
+                justify-content: center;
+            }
+        }
+        /* ======================================= */
+        /* CSS (style.css) END */
+        /* ======================================= */
     </style>
 </head>
 <body>
 
-    <div class="landing-container">
-        <div class="landing-content">
-            <h1>Welcome to <span>ExpenseWise</span></h1>
-            <p>Track your expenses and manage your budget smartly.</p>
-            
-            <a href="app.html" class="cta-button">Go to App</a>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Expense<span>Wise</span></h1>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="app.html" class="cta-nav-button">Get Started</a></li>
+            </ul>
         </div>
-    </div>
+    </nav>
 
+    <section id="hero" class="hero-section full-screen">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h2>Take Control of Your <span>Finances</span>, Effortlessly.</h2>
+                <p>ExpenseWise simplifies budgeting, tracks every penny, and helps you save smarter, not harder.</p>
+                <a href="app.html" class="cta-button">Start Tracking Now</a>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-chart-line fa-8x"></i> 
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <h3>Key Features</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-chart-pie fa-3x"></i>
+                    <h4>Visual Reports</h4>
+                    <p>See where your money goes with beautiful, easy-to-understand charts.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bell fa-3x"></i>
+                    <h4>Budget Alerts</h4>
+                    <p>Get instant notifications when you're about to cross your spending limits.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt fa-3x"></i>
+                    <h4>Cross-Platform</h4>
+                    <p>Track expenses on your phone, tablet, or desktop. Always in sync.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="cta-section full-screen">
+        <div class="container">
+            <h2>Ready to Achieve <span>Financial Peace</span>?</h2>
+            <p>Join thousands of smart users who manage their expenses with ease.</p>
+            <a href="app.html" class="cta-button secondary-cta">Go to Your App</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ExpenseWise. All rights reserved. | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+        </div>
+    </footer>
+
+    <script>
+        /* ======================================= */
+        /* JavaScript (script.js) START */
+        /* ======================================= */
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Smooth Scroll for Navigation Links
+            document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // 2. Simple Fade-In Animation on Scroll (Intersection Observer)
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // Jab 10% element dikhe
+            };
+
+            const sections = document.querySelectorAll('.hero-section, .features-section, .cta-section');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Ek baar dikhne ke baad, dobara check na karein
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                section.style.opacity = '0'; // Starting opacity to 0
+                section.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
+                section.style.transform = 'translateY(20px)';
+                observer.observe(section);
+            });
+        });
+        /* ======================================= */
+        /* JavaScript (script.js) END */
+        /* ======================================= */
+    </script>
 </body>
 </html>
